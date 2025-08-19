@@ -1,61 +1,37 @@
-/* ===== GLOBAL (beż / biel / szarość) =======================================
-   - zachowuje Lato jak w projekcie, tylko wyraźniejsze rozmiary i kontrast
-==============================================================================*/
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
-:root{
-  /* Paleta */
-  --background:#F7F5F2;         /* ciepły beż tło */
-  --surface:#FFFFFF;             /* biała karta */
-  --surfaceAlt:#EFEDEA;          /* jasny beż */
-  --ink:#1B1B1B;                 /* mocna czerń tekstu */
-  --muted:#6E6E6E;               /* szary tekst drugorzędny */
-
-  /* Zachowuję zmienne z projektu */
-  --mainColor:#1F1F1F;           /* akcent = głęboki grafit */
-  --mainColorTransparent:#1F1F1F22;
-  --secondaryColor:#8C857A;      /* taupe / szarobeż */
-
-  /* Promienie i cienie */
-  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px;
-  --shadow-soft:0 10px 24px rgba(0,0,0,.06);
-  --ring:0 0 0 .2rem rgba(31,31,31,.2);
+:root {
+  --mainColor: #222;          /* ciemny szary dla tekstów */
+  --accentColor: #c9b89a;     /* beżowy akcent */
+  --backgroundColor: #f9f9f9; /* jasne tło */
+  --cardBg: #fff;             /* białe karty */
+  --cardShadow: rgba(0,0,0,0.08);
 }
 
-html,body{max-width:100vw;overflow-x:hidden;box-sizing:border-box}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-     color:var(--ink);background:var(--background);
-     -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-a{color:inherit;text-decoration:none}
-button{font-family:Lato,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-
-/* Czytelność */
-body{letter-spacing:.01em; line-height:1.4}
-h1,h2,h3{color:var(--ink)}
-p,button,input,textarea{font-size:16px}
-small{font-size:13px;color:var(--muted)}
-
-/* Przyciski – neutralne */
-button{
-  border:1px solid #E0DFDC; background:var(--surface);
-  color:var(--ink); border-radius:999px; padding:10px 16px; font-weight:700;
-  box-shadow:var(--shadow-soft); transition:.2s;
+body {
+  font-family: "Lato", sans-serif;
+  background: var(--backgroundColor);
+  color: var(--mainColor);
+  margin: 0;
+  padding: 0;
 }
-button:hover{transform:translateY(-1px)}
-button:active{transform:translateY(0)}
-button:disabled{opacity:.55;cursor:not-allowed}
 
-/* Pola */
-input,textarea,select{
-  width:100%; background:var(--surface); color:var(--ink);
-  border:1px solid #DAD7D3; border-radius:12px; padding:12px 14px; font-weight:600;
-  transition:border-color .2s, box-shadow .2s;
+/* linki i przyciski */
+a, button {
+  font-family: inherit;
+  cursor: pointer;
 }
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--mainColor);box-shadow:var(--ring)}
 
-/* Scrollbar subtelny */
-*{scrollbar-width:thin;scrollbar-color:#CFCBC6 transparent}
-::-webkit-scrollbar{width:12px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#CFCBC6;border-radius:999px;border:3px solid transparent;background-clip:content-box}
+button {
+  background: var(--accentColor);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #b8a887;
+}
