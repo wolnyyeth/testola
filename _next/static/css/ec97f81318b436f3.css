@@ -1,68 +1,91 @@
-.StartPanel_mainDiv__ZKgha {
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* wyśrodkowanie nagłówka i modeli */
-  text-align: center;
-  margin-top: 40px;
+/* GŁÓWNA SEKCJA */
+.StartPanel_mainDiv__ZKgha{
+  position:fixed;top:0;left:0;width:100vw;height:100dvh;
+  background:transparent;
+  display:flex;flex-direction:column;justify-content:flex-start;align-items:center;
+  padding:120px 60px 60px;
+  gap:40px;
 }
 
-.StartPanel_mainDiv__ZKgha h4 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 40px;
-  color: var(--mainColor);
+/* NAGŁÓWEK */
+.StartPanel_mainDiv__ZKgha h4{
+  font-size:40px;font-weight:900;text-transform:uppercase;
+  letter-spacing:.04em;color:var(--foreground);
+  width:100%;text-align:center; /* wyśrodkowany tytuł */
 }
 
-.StartPanel_modelsWrapper__H6e8z {
-  display: flex;
-  justify-content: center;  /* wyśrodkowanie modeli */
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
+/* WRAPPER MODELI – WYŚRODKOWANIE */
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{
+  width:min(1400px,100%);
+  display:flex;flex-wrap:wrap;
+  justify-content:center;    /* <— środek */
+  align-items:flex-start;
+  gap:40px;
 }
 
-.StartPanel_modelDiv__6GBxN {
-  flex: 0 1 280px;
+/* POJEDYNCZA KARTA MODELU */
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{
+  position:relative;flex:0 1 360px;max-width:420px;height:fit-content;background-color:var(--surface);
+  border:1px solid #E6E2DE;border-radius:16px;box-shadow:var(--shadow-soft);cursor:pointer;overflow:hidden;
 }
 
-.StartPanel_modelCard__Havh0 {
-  background: var(--cardBg);
-  box-shadow: 0 6px 16px var(--cardShadow);
-  border-radius: 16px;
-  padding: 20px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{
+  position:relative;left:0;width:100%;height:fit-content;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;
+  gap:20px;opacity:1;transition:.2s;
 }
 
-.StartPanel_modelCard__Havh0:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 img{
+  position:relative;width:100%;aspect-ratio:16/10;object-fit:cover;background:#F5F3EF;
 }
 
-.StartPanel_modelCard__Havh0 img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 16px;
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span{
+  position:relative;width:100%;height:fit-content;padding:20px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:10px;transition:.2s;opacity:1;
+}
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span b{
+  color:var(--foreground);font-size:20px;text-transform:uppercase;letter-spacing:.04em;
+}
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span p{
+  color:#666;font-size:15px;line-height:1.55;font-weight:600;
 }
 
-.StartPanel_modelCard__Havh0 span {
-  display: block;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--mainColor);
+/* CTA – pokazywany na hover, ale stabilny */
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 button{
+  position:absolute;left:50%;bottom:20px;transform:translate(-50%);
+  opacity:0;transition:.25s;
+  height:44px;padding:0 20px;border-radius:999px;white-space:nowrap;font-size:13px;
+  background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);
+}
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0:hover button{opacity:1}
+
+/* BADGE */
+.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 .StartPanel_adnotation__PKKkE{
+  position:absolute;top:12px;right:12px;background-color:var(--secondaryColor);height:32px;
+  display:flex;justify-content:center;align-items:center;border-radius:10px;color:#fff;text-transform:uppercase;
+  padding:0 14px;z-index:2;font-weight:900;font-size:12px;
 }
 
-.StartPanel_modelCard__Havh0 button {
-  width: 100%;
+/* RESPONSYWNOŚĆ – zachowuję Twoje breakpoints, ale bez rozjeżdżania */
+@media (max-width:1900px){
+  .StartPanel_mainDiv__ZKgha{padding:80px 40px 40px;gap:40px}
+  .StartPanel_mainDiv__ZKgha h4{font-size:36px}
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{gap:30px}
 }
-
-.StartPanel_adnotation__PKKkE {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #fff;
-  background: var(--accentColor);
-  border-radius: 14px;
+@media (max-width:1500px){
+  .StartPanel_mainDiv__ZKgha{padding:40px 30px}
+  .StartPanel_mainDiv__ZKgha h4{font-size:32px}
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{gap:24px}
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{flex:0 1 320px}
+}
+@media (max-width:1150px){
+  .StartPanel_mainDiv__ZKgha h4{font-size:26px}
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{flex:0 1 280px}
+}
+@media (max-width:750px){
+  .StartPanel_mainDiv__ZKgha{padding:24px 16px;gap:16px}
+  .StartPanel_mainDiv__ZKgha h4{font-size:24px}
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{
+    width:100%;height:auto;flex-direction:column;gap:18px;justify-content:center;align-items:center;padding:8px 0;
+  }
+  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{width:100%;max-width:520px}
 }
