@@ -1,246 +1,211 @@
-/* ===== CONFIGURATOR ======================================================== */
-/* Układ i wymiary zostają takie jak w oryginale (vw, 75%/25% itp.) – zmieniam kolory,
-   kontrasty i stany aktywne tak, by CAŁA OPCJA była wyraźnie podświetlona. */
-
+/* EKRAN */
 .Configurator_screenDiv__jz_i9{
   position:fixed;left:0;top:0;width:100vw;height:100dvh;background-color:var(--background);
   display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;
 }
-.Configurator_screenDiv__jz_i9.Configurator_dark__MEf2d{background-color:var(--surfaceAlt)}
+.Configurator_screenDiv__jz_i9.Configurator_dark__MEf2d{background-color:#EBE7E1}
 
 /* NAV */
 .Configurator_screenDiv__jz_i9 nav{
   position:relative;width:100%;height:3.2vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;
-  border-bottom:1px solid #E4E1DC;padding:.8vw 1vw;background:var(--surface);
+  border-bottom:1px solid #E4E1DC;padding:.8vw 1vw;background-color:var(--surface);
 }
-.Configurator_screenDiv__jz_i9 nav h3{position:relative;font-size:1.6vw;color:var(--ink);font-weight:800}
+.Configurator_screenDiv__jz_i9 nav h3{position:relative;font-size:1.6vw;color:var(--foreground);font-weight:900}
 .Configurator_screenDiv__jz_i9 nav .Configurator_navButton__rNHYh{
-  display:flex;flex-direction:row;justify-content:center;align-items:center;width:fit-content;height:fit-content;
-  color:var(--muted);border:0;background-color:transparent;gap:.6vw;font-weight:700;font-size:.9vw;cursor:pointer;transition:.2s;
-}
-.Configurator_screenDiv__jz_i9 nav .Configurator_navButton__rNHYh:hover{color:var(--ink)}
+  display:flex;flex-direction:row;justify-content:center;align-items:center;width:fit-content;height:fit-content;color:#6E6E6E;border:0;background-color:transparent;gap:.6vw;font-weight:800;font-size:.9vw;cursor:pointer;transition:.2s}
+.Configurator_screenDiv__jz_i9 nav .Configurator_navButton__rNHYh:hover{color:var(--foreground)}
 .Configurator_screenDiv__jz_i9 nav .Configurator_navButton__rNHYh svg{height:1.2vw;stroke-width:2}
 .Configurator_screenDiv__jz_i9 nav span{height:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:.6vw}
 .Configurator_screenDiv__jz_i9 nav span button{
-  height:100%;padding:0 1vw;background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);cursor:pointer;transition:.2s;font-size:.8vw;border-radius:999px;
-}
+  height:100%;padding:0 1vw;background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);cursor:pointer;transition:.2s;font-size:.8vw;border-radius:999px}
 .Configurator_screenDiv__jz_i9 nav span button:hover{background-color:#fff;color:var(--mainColor)}
 
 /* LAYOUT */
-.Configurator_configuratorDiv__QZIIk{position:relative;width:100%;height:calc(100% - 3.2vw);display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start}
-.Configurator_canvasDiv__xyCWf{
-  position:relative;height:100%;width:75%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.4vw;
-  background:var(--surfaceAlt);
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk{
+  position:relative;width:100%;height:calc(100% - 3.2vw);display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start
 }
-.Configurator_canvasElement__GPdxf{position:absolute;left:0;top:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:transparent}
+
+/* CANVAS */
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf{
+  position:relative;height:100%;width:75%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.4vw;background-color:var(--surfaceAlt)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_canvasElement__GPdxf{
+  position:absolute;left:0;top:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;background-color:transparent}
 
 /* KROKI */
-.Configurator_stepsButtons__Q_So4{position:absolute;left:0;top:0;padding:1vw;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start}
-.Configurator_stepsButtons__Q_So4 button{
-  height:2.2vw;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;color:var(--muted);
-  border:1px solid #DDD8D2;background-color:#FFFFFF;gap:.7vw;cursor:pointer;transition:.2s;white-space:nowrap;border-radius:999px;padding:0 .8vw;
-}
-.Configurator_stepsButtons__Q_So4 button div{
-  height:2.2vw;aspect-ratio:1/1;border-radius:999px;border:2px solid #BFBAB3;display:flex;justify-content:center;align-items:center;font-size:.9vw;transition:.2s;background:#FFF;color:#777;width:2.2vw;
-}
-.Configurator_stepsButtons__Q_So4 button p{font-size:.85vw;text-transform:capitalize;font-weight:700}
-.Configurator_stepsButtons__Q_So4 button span{width:2.2vw;height:.12vw;background-color:#D6D1CB;margin-right:.6vw}
-.Configurator_stepsButtons__Q_So4>button:last-of-type span{display:none}
-.Configurator_stepsButtons__Q_So4 button:hover{color:var(--ink);border-color:#CAC5BF}
-.Configurator_stepsButtons__Q_So4 button:hover div{border-color:var(--mainColor);color:var(--mainColor)}
-.Configurator_stepsButtons__Q_So4 button.Configurator_active__hlYRw{
-  color:#fff;background-color:var(--mainColor);border-color:var(--mainColor)
-}
-.Configurator_stepsButtons__Q_So4 button.Configurator_active__hlYRw div{
-  border-color:#fff;background-color:#fff;color:var(--mainColor)
-}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4{
+  position:absolute;left:0;top:0;padding:1vw;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button{
+  height:2.2vw;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;color:#6E6E6E;border:1px solid #DDD8D2;background-color:#FFFFFF;gap:.7vw;cursor:pointer;transition:.2s;white-space:nowrap;border-radius:999px;padding:0 .8vw}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button div{
+  height:2.2vw;width:2.2vw;aspect-ratio:1/1;border-radius:999px;border:2px solid #BFBAB3;display:flex;justify-content:center;align-items:center;font-size:.9vw;transition:.2s;background:#FFF;color:#777}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button p{font-size:.85vw;text-transform:capitalize;font-weight:800}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button span{width:2.2vw;height:.12vw;background-color:#D6D1CB;margin-right:.6vw}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4>button:last-of-type span{display:none}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button:hover{color:var(--foreground);border-color:#CAC5BF}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button:hover div{border-color:var(--mainColor);color:var(--mainColor)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button.Configurator_active__hlYRw{color:#fff;background-color:var(--mainColor);border-color:var(--mainColor)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_stepsButtons__Q_So4 button.Configurator_active__hlYRw div{border-color:#fff;background-color:#fff;color:var(--mainColor)}
 
-/* DOLNE FUNKCJE */
-.Configurator_functionButtons__4zMA_{position:absolute;left:50%;bottom:1.6vw;height:3vw;width:fit-content;display:flex;flex-direction:row;justify-content:center;align-items:center;transform:translate(-50%);gap:.8vw;background-color:var(--surface);border:1px solid #E4E1DC;padding:.2vw;border-radius:999px;box-shadow:var(--shadow-soft)}
-.Configurator_functionButtons__4zMA_ button{
-  position:relative;height:100%;aspect-ratio:1/1;background-color:#fff;color:#333;border:1px solid #E6E2DE;border-radius:999px;
-  display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s;
-}
-.Configurator_functionButtons__4zMA_ button:hover{transform:translateY(-1px)}
-.Configurator_functionButtons__4zMA_ button svg{height:1.25vw;aspect-ratio:1/1}
-.Configurator_functionButtons__4zMA_ button a{
-  position:absolute;bottom:.5vw;white-space:nowrap;height:auto;background-color:#1B1B1B;color:#fff;display:flex;justify-content:center;align-items:center;padding:.35vw .6vw;font-size:.65vw;border-radius:.4vw;opacity:0;transition:.2s;
-}
-.Configurator_functionButtons__4zMA_ button:hover a{bottom:3.1vw;opacity:1}
-.Configurator_functionButtons__4zMA_ button a p{
-  position:absolute;height:.45vw;width:.45vw;background-color:#1B1B1B;right:50%;bottom:-.15vw;transform:translate(50%,50%) rotate(45deg);z-index:999;opacity:1;
-}
+/* PRZYCISKI FUNKCYJNE POD CANVASEM */
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_{
+  position:absolute;left:50%;bottom:1.6vw;height:3vw;width:fit-content;display:flex;flex-direction:row;justify-content:center;align-items:center;transform:translate(-50%);gap:.8vw;background-color:#fff;border:1px solid #E4E1DC;padding:.2vw;border-radius:999px;box-shadow:var(--shadow-soft)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button{
+  position:relative;height:100%;aspect-ratio:1/1;background-color:#fff;color:#333;border:1px solid #E6E2DE;border-radius:999px;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button:hover{transform:translateY(-1px)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button svg{height:1.25vw;aspect-ratio:1/1}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button a{
+  position:absolute;bottom:.5vw;white-space:nowrap;height:auto;background-color:#1B1B1B;color:#fff;display:flex;justify-content:center;align-items:center;padding:.35vw .6vw;font-size:.65vw;border-radius:.4vw;opacity:0;transition:.2s}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button:hover a{bottom:3.1vw;opacity:1}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_canvasDiv__xyCWf .Configurator_functionButtons__4zMA_ button a p{position:absolute;height:.45vw;width:.45vw;background-color:#1B1B1B;right:50%;bottom:-.15vw;transform:translate(50%,50%) rotate(45deg);z-index:999;opacity:1}
 
 /* PANEL BOCZNY */
-.Configurator_controlsDiv__dMJE3{
-  position:relative;width:25%;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:3.2vw 1.2vw 1.2vw;gap:1.2vw;background:var(--surface);
-  border-left:1px solid #E4E1DC;
-}
-.Configurator_buttonDiv__uGanm{width:100%;height:fit-content;padding:0 .8vw}
-.Configurator_buttonDiv__uGanm button{
-  width:100%;height:2.2vw;border-radius:999px;border:1px solid var(--mainColor);background-color:var(--mainColor);color:#fff;font-size:.85vw;cursor:pointer;transition:.2s;
-}
-.Configurator_buttonDiv__uGanm button:hover{background-color:#fff;color:var(--mainColor)}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3{
+  position:relative;width:25%;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:3.2vw 1.2vw 1.2vw;gap:1.2vw;background-color:var(--surface);border-left:1px solid #E4E1DC}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_buttonDiv__uGanm{width:100%;height:fit-content;padding:0 .8vw}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_buttonDiv__uGanm button{
+  width:100%;height:2.2vw;border-radius:999px;border:1px solid var(--mainColor);background-color:var(--mainColor);color:#fff;font-size:.85vw;cursor:pointer;transition:.2s}
+.Configurator_screenDiv__jz_i9 .Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_buttonDiv__uGanm button:hover{background-color:#fff;color:var(--mainColor)}
 
-.Configurator_panelDiv__dloxL{
-  position:relative;width:100%;height:calc(100% - 3vw);background-color:var(--surface);box-shadow:var(--shadow-soft);border:1px solid #E4E1DC;border-radius:12px;
-}
-.Configurator_panelWindow__dWKzx{position:relative;width:100%;height:100%;overflow:hidden}
-.Configurator_panelWrapper__M_209{position:absolute;top:0;width:700%;height:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;transition:.3s}
-.Configurator_panel__RmvEu{
-  position:relative;flex:1 1;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.2vw;overflow:auto;padding:1.2vw;background:var(--surface);
-}
-.Configurator_panel__RmvEu h3{font-size:1.1vw;font-weight:900;text-transform:uppercase;color:var(--ink)}
-.Configurator_panel__RmvEu .Configurator_panelLabel__kDSRg{font-size:.75vw;font-weight:700;text-transform:uppercase;color:var(--muted)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL{
+  position:relative;width:100%;height:calc(100% - 3vw);background-color:var(--surface);box-shadow:var(--shadow-soft);border:1px solid #E4E1DC;border-radius:12px}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWindow__dWKzx{position:relative;width:100%;height:100%;overflow:hidden}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209{position:absolute;top:0;width:700%;height:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;transition:.3s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu{
+  position:relative;flex:1 1;height:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.2vw;overflow:auto;padding:1.2vw;background:var(--surface)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu h3{
+  font-size:1.1vw;font-weight:900;text-transform:uppercase}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_panelLabel__kDSRg{
+  font-size:.75vw;font-weight:800;text-transform:uppercase;color:#6E6E6E}
 
-/* SUWAK +/− */
-.Configurator_sliderDiv__Ura96{
-  width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:1.2vw;margin-top:-.6vw
-}
-.Configurator_sliderDiv__Ura96 p{
-  position:relative;width:8.5vw;display:flex;flex-direction:row;justify-content:flex-end;align-items:center;height:1.9vw;font-size:.95vw;gap:.4vw
-}
-.Configurator_sliderDiv__Ura96 p a{
-  width:5.2vw;text-align:center;background:var(--surfaceAlt);border:1px solid #DDD8D2;border-radius:10px;padding:.2vw 0;font-weight:800;color:var(--ink)
-}
-.Configurator_sliderDiv__Ura96 p button{
-  height:100%;background-color:#fff;border:1px solid var(--mainColor);aspect-ratio:1/1;color:var(--mainColor);border-radius:10px;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s
-}
-.Configurator_sliderDiv__Ura96 p button:hover{background-color:var(--mainColor);color:#fff}
-.Configurator_sliderDiv__Ura96 p button svg{height:1.2vw}
-.Configurator_sliderDiv__Ura96 p button:disabled{opacity:.5;cursor:not-allowed}
+/* SUWAK +/- */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96{
+  position:relative;width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;gap:1.2vw;margin-top:-.6vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p{
+  position:relative;width:8.5vw;display:flex;flex-direction:row;justify-content:flex-end;align-items:center;height:1.9vw;font-size:.95vw;gap:.4vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p a{
+  width:5.2vw;text-align:center;background:var(--surfaceAlt);border:1px solid #DDD8D2;border-radius:10px;padding:.2vw 0;font-weight:900;color:var(--foreground)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p button{
+  height:100%;background-color:#fff;border:1px solid var(--mainColor);aspect-ratio:1/1;color:var(--mainColor);border-radius:10px;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p button:hover{background-color:var(--mainColor);color:#fff}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p button svg{height:1.2vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_sliderDiv__Ura96 p button:disabled{opacity:.5;cursor:not-allowed}
 
-/* CHECKBOX – wariant 1 (cała opcja wyraźnie aktywna) */
-.Configurator_checkBoxDiv__9FORt{
-  width:100%;height:2.6vw;background-color:var(--surfaceAlt);display:flex;flex-direction:row;justify-content:flex-start;align-items:center;padding:.6vw;gap:.6vw;cursor:pointer;border:1px solid #E0DDD8;border-radius:12px;transition:.2s
-}
-.Configurator_checkBoxDiv__9FORt:hover{border-color:#CFCBC6}
-.Configurator_checkBoxDiv__9FORt span{
-  border-radius:10px;height:100%;aspect-ratio:1/1;background-color:#fff;border:2px solid #BFBAB3;color:#BFBAB3;display:flex;justify-content:center;align-items:center;transition:.2s
-}
-.Configurator_checkBoxDiv__9FORt span svg{height:70%}
-.Configurator_checkBoxDiv__9FORt p{font-size:.95vw;font-weight:800;color:var(--ink)}
-/* STAN AKTYWNY – CAŁA OPCJA PODŚWIETLONA */
-.Configurator_checkBoxDiv__9FORt span.Configurator_active__hlYRw{background-color:var(--mainColor);border-color:var(--mainColor);color:#fff}
-.Configurator_checkBoxDiv__9FORt.Configurator_active__hlYRw,
-.Configurator_checkBoxDiv__9FORt:has(span.Configurator_active__hlYRw){
-  background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent);
-}
+/* CHECKBOX – wariant 1 (cała opcja widocznie aktywna) */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt{
+  width:100%;height:2.6vw;background-color:var(--surfaceAlt);display:flex;flex-direction:row;justify-content:flex-start;align-items:center;padding:.6vw;gap:.6vw;cursor:pointer;border:1px solid #E0DDD8;border-radius:12px;transition:.2s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt:hover{border-color:#CFCBC6}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt span{
+  border-radius:10px;height:100%;aspect-ratio:1/1;background-color:#fff;border:2px solid #BFBAB3;color:#BFBAB3;display:flex;justify-content:center;align-items:center;transition:.2s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt span svg{height:70%}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt p{font-size:.95vw;font-weight:900;color:var(--foreground)}
+/* STAN AKTYWNY */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt span.Configurator_active__hlYRw{background-color:var(--mainColor);border-color:var(--mainColor);color:#fff}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt.Configurator_active__hlYRw,
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxDiv__9FORt:has(span.Configurator_active__hlYRw){
+  background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent)}
 
-/* KAFELKI OPCJI – wyraźne zaznaczenie całego kafla */
-.Configurator_cardWrapper__kkFVC{width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:.8vw}
-.Configurator_cardDiv__ublwb{
-  height:fit-content;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:.5vw;background-color:var(--surfaceAlt);color:var(--ink);padding:.6vw;cursor:pointer;transition:.2s;border-radius:12px;border:1px solid #E0DDD8
-}
-.Configurator_cardDiv__ublwb img{width:100%;aspect-ratio:1/1;border-radius:10px;background-color:#fff}
-.Configurator_cardDiv__ublwb p{text-transform:capitalize;font-size:.9vw;font-weight:800;margin-top:.2vw}
-.Configurator_cardDiv__ublwb button{width:50%;border-radius:10px;border:1px solid var(--mainColor);background-color:var(--mainColor);color:#fff;height:1.8vw;transition:.2s;cursor:pointer;font-weight:800}
-.Configurator_cardDiv__ublwb:hover{border-color:#CFCBC6;transform:translateY(-1px)}
-/* STAN AKTYWNY – CAŁY KAFEL WYRÓŻNIONY */
-.Configurator_cardDiv__ublwb.Configurator_active__hlYRw{
-  background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent)
-}
-.Configurator_cardDiv__ublwb.Configurator_active__hlYRw button{background:#fff;color:var(--mainColor)}
-.Configurator_cardDiv__ublwb.Configurator_doubleDiv__gU0GH{width:calc((100% - .8vw) / 2)}
-.Configurator_cardDiv__ublwb.Configurator_tripleDiv__kIhoj{width:calc((100% - 1.6vw) / 3)}
+/* KAFELKI OPCJI */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC{
+  width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;flex-wrap:wrap;gap:.8vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb{
+  height:fit-content;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:.5vw;background-color:var(--surfaceAlt);color:var(--foreground);padding:.6vw;cursor:pointer;transition:.2s;border-radius:12px;border:1px solid #E0DDD8}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb img{width:100%;aspect-ratio:1/1;border-radius:10px;background-color:#fff}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb p{text-transform:capitalize;font-size:.9vw;font-weight:900;margin-top:.2vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb button{width:50%;border-radius:10px;border:1px solid var(--mainColor);background-color:var(--mainColor);color:#fff;height:1.8vw;transition:.2s;cursor:pointer;font-weight:900}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb:hover{border-color:#CFCBC6;transform:translateY(-1px)}
+/* STAN AKTYWNY – cały kafel */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb.Configurator_active__hlYRw{
+  background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb.Configurator_active__hlYRw button{background:#fff;color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb.Configurator_doubleDiv__gU0GH{width:calc((100% - .8vw) / 2)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_cardWrapper__kkFVC .Configurator_cardDiv__ublwb.Configurator_tripleDiv__kIhoj{width:calc((100% - 1.6vw) / 3)}
 
 /* CHECKBOX – wariant 2 (lista) */
-.Configurator_checkBoxWrapper__1iu0P{width:100%;display:flex;flex-direction:column;gap:.6vw}
-.Configurator_checkBoxDiv2__jHnKJ{
-  width:100%;height:2.4vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:.5vw;background-color:var(--surfaceAlt);color:var(--ink);cursor:pointer;transition:.2s;border-radius:12px;border:1px solid #E0DDD8
-}
-.Configurator_checkBoxDiv2__jHnKJ p{font-size:.8vw;text-transform:uppercase;font-weight:800;margin-left:.2vw;color:var(--ink)}
-.Configurator_checkBoxDiv2__jHnKJ span{
-  height:100%;aspect-ratio:1/1;border-radius:999px;background-color:#fff;color:#BFBAB3;border:2px solid #BFBAB3;transition:.2s;display:flex;justify-content:center;align-items:center
-}
-.Configurator_checkBoxDiv2__jHnKJ:hover span{color:var(--mainColor);border-color:var(--mainColor)}
-.Configurator_checkBoxDiv2__jHnKJ span svg{stroke-width:2.5;height:70%;opacity:.9}
-/* STAN AKTYWNY – widoczny */
-.Configurator_checkBoxDiv2__jHnKJ.Configurator_active__hlYRw{
-  background:#fff;color:var(--ink);border-color:var(--mainColor)
-}
-.Configurator_checkBoxDiv2__jHnKJ.Configurator_active__hlYRw span{background:var(--mainColor);color:#fff;border-color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P{width:100%;display:flex;flex-direction:column;gap:.6vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ{
+  width:100%;height:2.4vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:.5vw;background-color:var(--surfaceAlt);color:var(--foreground);cursor:pointer;transition:.2s;border-radius:12px;border:1px solid #E0DDD8}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ p{font-size:.8vw;text-transform:uppercase;font-weight:900;margin-left:.2vw;color:var(--foreground)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ span{
+  height:100%;aspect-ratio:1/1;border-radius:999px;background-color:#fff;color:#BFBAB3;border:2px solid #BFBAB3;transition:.2s;display:flex;justify-content:center;align-items:center}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ:hover span{color:var(--mainColor);border-color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ span svg{stroke-width:2.5;height:70%;opacity:.9}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ.Configurator_active__hlYRw{background:#fff;color:var(--foreground);border-color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv2__jHnKJ.Configurator_active__hlYRw span{background:var(--mainColor);color:#fff;border-color:var(--mainColor)}
 
-/* Separator */
-.Configurator_separator__LBvJu{width:100%;height:.1vw;background-color:#E6E2DE;border-radius:999px}
+/* SEPARATOR */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_separator__LBvJu{width:100%;height:.1vw;background-color:#E6E2DE;border-radius:999px}
 
-/* Przyciski „ścian”/trybów */
-.Configurator_wallWrapper__4C0BU{width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;height:fit-content;gap:.8vw}
-.Configurator_wallButton__o_ig7{
-  width: calc((70% - 2.4vw) / 4);aspect-ratio:1/1;border-radius:999px;border:2px solid var(--mainColor);background-color:var(--surfaceAlt);color:var(--mainColor);font-size:1.1vw;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s
-}
-.Configurator_wallButton__o_ig7.Configurator_active__hlYRw,
-.Configurator_wallButton__o_ig7:hover{background-color:var(--mainColor);color:#fff}
+/* PRZYCISKI TRYBÓW / ŚCIAN */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_wallWrapper__4C0BU{
+  width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;height:fit-content;gap:.8vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_wallWrapper__4C0BU .Configurator_wallButton__o_ig7{
+  width:calc((70% - 2.4vw) / 4);aspect-ratio:1/1;border-radius:999px;border:2px solid var(--mainColor);background-color:var(--surfaceAlt);color:var(--mainColor);font-size:1.1vw;display:flex;justify-content:center;align-items:center;cursor:pointer;transition:.2s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_wallWrapper__4C0BU .Configurator_wallButton__o_ig7.Configurator_active__hlYRw,
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_wallWrapper__4C0BU .Configurator_wallButton__o_ig7:hover{background-color:var(--mainColor);color:#fff}
 
 /* CHECKBOX – wariant 3 (rozwijany) */
-.Configurator_checkBoxDiv3__hmFiM{
-  width:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:.5vw;background-color:var(--surfaceAlt);color:var(--ink);cursor:pointer;transition:.2s;gap:0;border-radius:12px;border:1px solid #E0DDD8
-}
-.Configurator_checkBoxDiv3__hmFiM nav{width:100%;height:1.8vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:0;background:transparent;border:0}
-.Configurator_checkBoxDiv3__hmFiM nav p{font-size:.8vw;text-transform:uppercase;font-weight:800;margin-left:.2vw}
-.Configurator_checkBoxDiv3__hmFiM nav span{
-  height:100%;aspect-ratio:1/1;border-radius:999px;background-color:#fff;color:#BFBAB3;border:2px solid #BFBAB3;transition:.2s;display:flex;justify-content:center;align-items:center
-}
-.Configurator_checkBoxDiv3__hmFiM:hover nav span{color:var(--mainColor);border-color:var(--mainColor)}
-.Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX{
-  width:100%;display:none;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:.5vw;padding:.4vw;color:var(--ink)
-}
-.Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw{background:#fff;border-color:var(--mainColor)}
-.Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw nav span{background-color:var(--mainColor);color:#fff;border-color:var(--mainColor)}
-.Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw .Configurator_checkBoxBody___W1JX{display:flex}
-.Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX h4{font-size:.8vw;font-weight:800}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM{
+  width:100%;height:fit-content;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:.5vw;background-color:var(--surfaceAlt);color:var(--foreground);cursor:pointer;transition:.2s;gap:0;border-radius:12px;border:1px solid #E0DDD8}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM nav{
+  width:100%;height:1.8vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:0;background-color:transparent;border:0}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM nav p{font-size:.8vw;text-transform:uppercase;font-weight:900;margin-left:.2vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM nav span{
+  height:100%;aspect-ratio:1/1;border-radius:999px;background-color:#fff;color:#BFBAB3;border:2px solid #BFBAB3;transition:.2s;display:flex;justify-content:center;align-items:center}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM:hover nav span{background-color:transparent;color:var(--mainColor);border:2px solid var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX{
+  width:100%;height:fit-content;display:none;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:.4vw;padding:.4vw;color:var(--foreground)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw{background:#fff;border-color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw nav span{background-color:var(--mainColor);color:#fff;border-color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM.Configurator_active__hlYRw .Configurator_checkBoxBody___W1JX{display:flex}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX h4{font-size:.8vw;font-weight:900}
 
-/* Warianty w środku */
-.Configurator_variantWrapper__sALTZ{width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;gap:.5vw;margin-bottom:.2vw}
-.Configurator_variantButton__PHTTH{
-  width:calc((100% - 1vw) / 3);background-color:#fff;color:#141414;border:1px solid #E6E2DE;cursor:pointer;transition:.2s;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:.3vw;padding:.35vw;border-radius:12px
-}
-.Configurator_variantButton__PHTTH img{width:100%;aspect-ratio:1/1;background-color:#fff;border-radius:10px}
-.Configurator_variantButton__PHTTH p{font-size:.8vw;font-weight:700}
-.Configurator_variantButton__PHTTH a{width:100%;background-color:var(--mainColor);color:#fff;height:1.2vw;font-size:.65vw;display:flex;justify-content:center;align-items:center;border-radius:10px}
-.Configurator_variantButton__PHTTH:hover{border-color:#CFCBC6;transform:translateY(-1px)}
-.Configurator_variantButton__PHTTH.Configurator_active__hlYRw{
-  background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent)
-}
-.Configurator_variantButton__PHTTH.Configurator_active__hlYRw a{background:#fff;color:var(--mainColor);border:1px solid var(--mainColor)}
+/* Warianty wewnątrz */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ{
+  width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:flex-start;flex-wrap:wrap;gap:.5vw;margin-bottom:.2vw}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH{
+  width:calc((100% - 1vw) / 3);height:fit-content;background-color:#fff;color:#141414;border:1px solid #E6E2DE;cursor:pointer;transition:.2s;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:.3vw;padding:.35vw;border-radius:12px}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH img{width:100%;aspect-ratio:1/1;background-color:#fff;border-radius:10px}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH p{font-size:.8vw;font-weight:800}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH a{
+  width:100%;background-color:var(--mainColor);color:#fff;height:1.2vw;font-size:.65vw;display:flex;justify-content:center;align-items:center;border-radius:10px}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH:hover{border-color:#CFCBC6;transform:translateY(-1px)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH.Configurator_active__hlYRw{background:#fff;border-color:var(--mainColor);box-shadow:inset 0 0 0 2px var(--mainColorTransparent)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_checkBoxWrapper__1iu0P .Configurator_checkBoxDiv3__hmFiM .Configurator_checkBoxBody___W1JX .Configurator_variantWrapper__sALTZ .Configurator_variantButton__PHTTH.Configurator_active__hlYRw a{background:#fff;color:var(--mainColor);border:1px solid var(--mainColor)}
 
-/* PODSUMOWANIA / PRZYCISKI */
-.Configurator_bigButton__3kNFF{
-  width:100%;height:2.5vw;display:flex;justify-content:center;align-items:center;border-radius:12px;border:1px solid var(--mainColor);color:#fff;background-color:var(--mainColor);gap:.4vw;cursor:pointer;transition:.2s
-}
-.Configurator_bigButton__3kNFF:hover{background:#fff;color:var(--mainColor)}
-.Configurator_bigButton__3kNFF p{font-size:.9vw;text-transform:uppercase;font-weight:900}
-.Configurator_bigButton__3kNFF svg{height:1.7vw}
+/* DUŻE PRZYCISKI / PODSUMOWANIE */
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_bigButton__3kNFF{
+  width:100%;height:2.5vw;display:flex;justify-content:center;align-items:center;border-radius:12px;border:1px solid var(--mainColor);color:#fff;background-color:var(--mainColor);gap:.4vw;cursor:pointer;transition:.2s}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_bigButton__3kNFF:hover{background:#fff;color:var(--mainColor)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_bigButton__3kNFF p{font-size:.9vw;text-transform:uppercase;font-weight:900}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_bigButton__3kNFF svg{height:1.7vw}
 
-.Configurator_summaryWrapper__8J5bU{
-  width:100%;background-color:#F1EFEB;height:1.8vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:.6vw;font-size:.9vw;font-weight:800;margin-top:-.6vw;border-radius:12px;border:1px solid #E6E2DE;color:var(--ink)
-}
-.Configurator_summaryWrapper__8J5bU>a:first-child{text-transform:uppercase}
-.Configurator_summaryBigDiv__Ai4Ue{
-  width:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:.8vw;background-color:var(--surfaceAlt);margin-top:-.6vw;border-radius:12px;border:1px solid #E6E2DE
-}
-.Configurator_summaryBigDiv__Ai4Ue label{
-  width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;padding:.6vw;text-transform:uppercase;text-align:left;font-weight:900;background-color:#F1EFEB;border-top-left-radius:12px;border-top-right-radius:12px
-}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_summaryWrapper__8J5bU{
+  width:100%;background-color:#F1EFEB;height:1.8vw;display:flex;flex-direction:row;justify-content:space-between;align-items:center;padding:.6vw;font-size:.9vw;font-weight:900;margin-top:-.6vw;border-radius:12px;border:1px solid #E6E2DE;color:var(--foreground)}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_summaryWrapper__8J5bU>a:first-child{text-transform:uppercase}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_summaryBigDiv__Ai4Ue{
+  width:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:.8vw;background-color:var(--surfaceAlt);margin-top:-.6vw;border-radius:12px;border:1px solid #E6E2DE}
+.Configurator_configuratorDiv__QZIIk .Configurator_controlsDiv__dMJE3 .Configurator_panelDiv__dloxL .Configurator_panelWrapper__M_209 .Configurator_panel__RmvEu .Configurator_summaryBigDiv__Ai4Ue label{
+  width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:center;padding:.6vw;text-transform:uppercase;text-align:left;font-weight:900;background-color:#F1EFEB;border-top-left-radius:12px;border-top-right-radius:12px}
 
-/* POPUPY (zachowana struktura, kolory neutralne) */
+/* POPUPY */
 @keyframes Configurator_fade-in__KYXK0{0%{opacity:0}to{opacity:1}}
 .Configurator_popUpDiv___ExB8{
-  position:fixed;z-index:999;top:0;left:0;width:100vw;height:100dvh;background-color:#00000033;
-  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:Configurator_fade-in__KYXK0 .25s;display:flex;justify-content:center;align-items:center
-}
-.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl,
-.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN{
-  position:relative;width:40vw;min-width:480px;height:fit-content;background-color:var(--surface);display:flex;flex-direction:column;gap:1.2vw;padding:2vw;border:1px solid #E6E2DE;border-radius:16px;box-shadow:var(--shadow-soft)
-}
-.Configurator_popUpDiv___ExB8 nav{width:100%;display:flex;flex-direction:row;justify-content:space-between;align-items:center;background:transparent}
-.Configurator_popUpDiv___ExB8 nav h4{font-size:1.1vw;font-weight:900;color:var(--ink)}
-.Configurator_popUpDiv___ExB8 nav button{color:var(--ink);cursor:pointer;transition:.2s;height:1.8vw;aspect-ratio:1/1;background-color:#fff;border:1px solid #E6E2DE;border-radius:10px}
+  position:fixed;z-index:999;top:0;left:0;width:100vw;height:100dvh;background-color:#00000033;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);animation:Configurator_fade-in__KYXK0 .25s;display:flex;justify-content:center;align-items:center}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl{position:relative;width:35vw;min-width:520px;height:fit-content;flex-direction:row;align-items:center;gap:2.5vw;background-color:var(--surface);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5vw;border:1px solid #E6E2DE;border-radius:16px;box-shadow:var(--shadow-soft)}
+.Configurator_popUpDiv___ExB8 nav{position:relative;width:100%;height:fit-content;display:flex;flex-direction:row;justify-content:space-between;align-items:center}
+.Configurator_popUpDiv___ExB8 nav h4{font-size:1vw;font-weight:900}
+.Configurator_popUpDiv___ExB8 nav button{color:#141414;cursor:pointer;transition:.2s;height:1.6vw;aspect-ratio:1/1;background-color:#fff;border:1px solid #E6E2DE;border-radius:10px}
 .Configurator_popUpDiv___ExB8 nav button:hover{background-color:#FFE9E9;border-color:#F0B4B4;color:#B30000}
-.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form{width:100%;display:flex;flex-direction:column;gap:1vw}
-.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form input,
-.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form textarea{
-  width:100%;background:#fff;border:1px solid #DAD7D3;border-radius:12px;padding:.8vw;font-size:.9vw;font-weight:700;color:var(--ink)
-}
-.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form button{width:100%;height:2.2vw;background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);font-size:.9vw;font-weight:900;border-radius:999px}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form{width:100%;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;gap:1vw}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form input{width:100%;height:2vw;padding:0 .6vw;border:.06vw solid #DAD7D3;border-radius:12px;font-size:.7vw;transition:.2s;outline:0;font-family:Lato;font-weight:700;background:#fff}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form textarea{width:100%;height:10vw;padding:.6vw;border:.06vw solid #DAD7D3;border-radius:12px;font-size:.7vw;transition:.2s;outline:0;font-family:Lato;font-weight:700;background:#fff}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form input:focus,.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form textarea:focus{border:.06vw solid var(--mainColor);box-shadow:var(--ring)}
+.Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl form button{width:100%;height:2vw;background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);font-size:.8vw;font-weight:900;cursor:pointer;transition:.2s;border-radius:999px;margin-top:1.2vw}
 .Configurator_popUpDiv___ExB8 .Configurator_emailPopUpDiv__yi4Vl .Configurator_loaderDiv__vLjEi{width:100%;height:10vw;display:flex;justify-content:center;align-items:center}
+
+/* SHARE POPUP */
+.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN{position:relative;width:40vw;min-width:560px;height:fit-content;flex-direction:row;align-items:center;gap:2.5vw;background-color:var(--surface);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.5vw;border:1px solid #E6E2DE;border-radius:16px;box-shadow:var(--shadow-soft)}
+.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN .Configurator_popUpBody__2ZOT6{width:100%;display:flex;flex-direction:row;justify-content:center;align-items:center;gap:1vw}
+.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN .Configurator_popUpBody__2ZOT6 input{flex:1 1;height:2vw;padding:.6vw;font-family:Lato;font-weight:700;font-size:.7vw;border:.06vw solid var(--mainColor);border-radius:12px;background:#fff}
+.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN .Configurator_popUpBody__2ZOT6 p{flex:1 1;line-height:2vw;font-family:Lato;font-weight:700;font-size:.7vw;width:100%;display:flex;justify-content:center;align-items:center;color:var(--mainColor)}
+.Configurator_popUpDiv___ExB8 .Configurator_sharePopUpDiv__9F8KN .Configurator_popUpBody__2ZOT6 button{width:7.5vw;height:2vw;background-color:var(--mainColor);color:#fff;border:1px solid var(--mainColor);font-size:.7vw;font-weight:900;border-radius:999px;cursor:pointer}
