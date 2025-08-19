@@ -41,7 +41,7 @@
                   children: [
                     {
                       url: "aerolux",
-                      name: "Aerolux",
+                      name: "PERGI X",
                       description:
                         "Innowacyjny bioklimatyczny system pergoli z w pełni automatycznymi uchylnymi / składanymi aluminiowymi lamelami",
                       imageFront: "/AEROLUX.png",
@@ -49,7 +49,7 @@
                     },
                     {
                       url: "qx",
-                      name: "QX",
+                      name: "PERGI Y",
                       description:
                         "Elegancki składany bioklimatyczny system o zwiększonych wymiarach",
                       imageFront: "/EXXEN.png",
