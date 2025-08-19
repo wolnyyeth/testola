@@ -1,83 +1,68 @@
-/* ===== START PANEL ========================================================= */
-
-.StartPanel_mainDiv__ZKgha{
-  position:fixed;top:0;left:0;width:100vw;height:100dvh;
-  background:var(--background);
-  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-  padding:150px;gap:60px;
+.StartPanel_mainDiv__ZKgha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* wyśrodkowanie nagłówka i modeli */
+  text-align: center;
+  margin-top: 40px;
 }
 
-.StartPanel_mainDiv__ZKgha h4{
-  font-size:40px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--ink);
+.StartPanel_mainDiv__ZKgha h4 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: var(--mainColor);
 }
 
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{
-  width:100%;height:fit-content;display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;gap:40px;
-  flex-wrap:wrap; /* stabilnie – zawijanie zamiast „pływania” */
+.StartPanel_modelsWrapper__H6e8z {
+  display: flex;
+  justify-content: center;  /* wyśrodkowanie modeli */
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* Karta modelu */
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{
-  position:relative;flex:1 1 320px;max-width:420px;height:fit-content;
-  background:var(--surface);border:1px solid #E4E1DC;border-radius:16px;
-  box-shadow:var(--shadow-soft);cursor:pointer;overflow:hidden;
+.StartPanel_modelDiv__6GBxN {
+  flex: 0 1 280px;
 }
 
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{
-  position:relative;width:100%;height:fit-content;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:20px;opacity:1;transition:.2s;
+.StartPanel_modelCard__Havh0 {
+  background: var(--cardBg);
+  box-shadow: 0 6px 16px var(--cardShadow);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 img{
-  position:relative;width:100%;aspect-ratio:16/10;object-fit:cover;background:#F2F0EC;
+.StartPanel_modelCard__Havh0:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
 }
 
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span{
-  position:relative;width:100%;height:fit-content;padding:20px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:10px;opacity:1;
+.StartPanel_modelCard__Havh0 img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
 }
 
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span b{
-  color:var(--ink);font-size:22px;text-transform:uppercase;letter-spacing:.04em;
-}
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span p{
-  color:var(--muted);font-size:15px;line-height:1.5;font-weight:600;
-}
-
-/* CTA jak wcześniej – pojawia się po hoverze, ale widoczniej */
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 button{
-  position:absolute;left:50%;bottom:20px;transform:translate(-50%);opacity:0;transition:.25s;
-  height:45px;padding:0 20px;background:var(--mainColor);color:#fff;border:1px solid var(--mainColor);white-space:nowrap;font-size:14px;border-radius:999px;gap:10px;
-}
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0:hover button{opacity:1}
-
-/* odznaka */
-.StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 .StartPanel_adnotation__PKKkE{
-  position:absolute;top:14px;right:14px;background:var(--secondaryColor);height:34px;display:flex;justify-content:center;align-items:center;border-radius:8px;color:#fff;text-transform:uppercase;padding:0 14px;z-index:2;font-weight:800;font-size:12px;
+.StartPanel_modelCard__Havh0 span {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--mainColor);
 }
 
-/* Responsywność zachowana z oryginału (bez zmian wymiarów bazowych) */
-@media (max-width:1900px){
-  .StartPanel_mainDiv__ZKgha{padding:50px;gap:60px}
-  .StartPanel_mainDiv__ZKgha h4{font-size:35px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{gap:20px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{gap:10px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 span b{font-size:20px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0 button{height:40px;font-size:12px}
+.StartPanel_modelCard__Havh0 button {
+  width: 100%;
 }
-@media (max-width:1500px){
-  .StartPanel_mainDiv__ZKgha{padding:0;gap:20px}
-  .StartPanel_mainDiv__ZKgha h4{font-size:35px;margin-left:40px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{gap:20px;overflow:auto;padding:40px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{min-width:300px}
-}
-@media (max-width:1150px){
-  .StartPanel_mainDiv__ZKgha h4{font-size:25px;padding:0 20px;margin-left:30px;width:100%}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{min-width:250px}
-}
-@media (max-width:750px){
-  .StartPanel_mainDiv__ZKgha{padding:0;gap:0}
-  .StartPanel_mainDiv__ZKgha h4{font-size:25px;padding:30px 20px;margin-left:0;text-align:center}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z{width:100%;height:calc(100% - 90px);display:flex;flex-direction:column;gap:25px;padding:25px}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN{width:100%;min-width:0}
-  .StartPanel_mainDiv__ZKgha .StartPanel_modelsWrapper__H6e8z .StartPanel_modelDiv__6GBxN .StartPanel_modelCard__Havh0{min-width:0}
+
+.StartPanel_adnotation__PKKkE {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--accentColor);
+  border-radius: 14px;
 }
