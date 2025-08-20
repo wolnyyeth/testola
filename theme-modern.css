@@ -347,3 +347,10 @@ body[data-theme="dark"] [class*="Configurator_checkBoxWrapper__"] [class*="Confi
 body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   border-color: rgba(255,255,255,.10) !important;
 }
+
+[class*="Configurator_checkBoxDiv2__"][class*="Configurator_active__"],
+[class*="Configurator_checkBoxDiv2__"][class*="Configurator_active__"] *,
+[class*="Configurator_checkBoxDiv__"][class*="Configurator_active__"],
+[class*="Configurator_checkBoxDiv__"][class*="Configurator_active__"] * {
+  color: #000 !important;
+}
