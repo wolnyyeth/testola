@@ -439,3 +439,19 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   opacity: 1 !important;
   z-index: 10 !important;
 }
+
+/* Wytnij rozmyty duplikat za <h3> */
+[class*="Configurator_screenDiv__"] nav h3 + span,
+[class*="Configurator_screenDiv__"] nav h3 + span *,
+[class*="Configurator_screenDiv__"] nav h3 + span::before,
+[class*="Configurator_screenDiv__"] nav h3 + span::after {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  content: none !important;
+}
+
+/* Upewnij się, że właściwy tytuł jest ponad wszystkim */
+[class*="Configurator_screenDiv__"] nav { position: relative !important; }
+[class*="Configurator_screenDiv__"] nav h3 { position: relative !important; z-index: 11 !important; }
+
