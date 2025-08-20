@@ -403,3 +403,18 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   filter: blur(6px);
   white-space: nowrap;
   pointer-events: none;
+
+/* Ukrycie rozmytego napisu w tle */
+[class*="Configurator_screenDiv__"] nav h3 + * {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Wzmocnienie złotego napisu */
+[class*="Configurator_screenDiv__"] nav h3 {
+  color: #bfa046 !important; /* luksusowe złoto */
+  text-shadow: none !important; /* bez cieni */
+  position: relative !important;
+  z-index: 10 !important; /* nad wszystkim */
+}
