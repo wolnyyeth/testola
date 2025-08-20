@@ -355,9 +355,52 @@ button[class*="active"],
 [class*="Configurator_cardWrapper__"] [class*="Configurator_cardDiv__"][class*="Configurator_active__"] {
   color: var(--text-primary) !important;
 }
-/* --- GLOBALNY FIX: Czarna czcionka w przyciskach --- */
-button,
-button * {
+
+
+/* === STRONG OVERRIDES: enforce black text on all buttons & active states === */
+
+/* 1) Generic buttons (covers StartPanel + CTAs) */
+button, button *, [class*="button"], [class*="Button__"] {
   color: #000 !important;
 }
 
+/* 2) Start panel CTA buttons forced to black label */
+[class*="StartPanel_modelCard__"] button {
+  color: #000 !important;
+}
+
+/* 3) Big CTA on right panel */
+[class*="Configurator_bigButton__"],
+[class*="Configurator_bigButton__"] * {
+  color: #000 !important;
+}
+
+/* 4) Active 'wall' buttons */
+[class*="Configurator_wallButtons__"] button[class*="Configurator_active__"],
+[class*="Configurator_wallButtons__"] button:hover {
+  color: #000 !important;
+}
+
+/* 5) Active cards & their inner texts */
+[class*="Configurator_cardWrapper__"] [class*="Configurator_cardDiv__"][class*="Configurator_active__"],
+[class*="Configurator_cardWrapper__"] [class*="Configurator_cardDiv__"][class*="Configurator_active__"] * {
+  color: #000 !important;
+}
+
+/* 6) Active checkbox rows (Div2) */
+[class*="Configurator_checkBoxWrapper__"] [class*="Configurator_checkBoxDiv2__"][class*="Configurator_active__"],
+[class*="Configurator_checkBoxWrapper__"] [class*="Configurator_checkBoxDiv2__"][class*="Configurator_active__"] * {
+  color: #000 !important;
+}
+
+/* 7) Active 'variant' tiles & their action links */
+[class*="Configurator_variantButton__"][class*="Configurator_active__"],
+[class*="Configurator_variantButton__"][class*="Configurator_active__"] * {
+  color: #000 !important;
+}
+
+/* 8) Steps bar: make number & label black when active */
+[class*="Configurator_stepsButtons__"] button[class*="Configurator_active__"],
+[class*="Configurator_stepsButtons__"] button[class*="Configurator_active__"] * {
+  color: #000 !important;
+}
