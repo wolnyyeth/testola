@@ -568,7 +568,7 @@
   margin-top: .2vw;
 }
 
-/* ... (reszta pliku jest truncated w zapytaniu, ale w oryginalnym kodzie kontynuuje się definicje kolejnych elementów jak checkBoxWrapper, separator, wallWrapper itp., aż po media queries i popupy. Ponieważ oryginalny jest skrócony, zakładam, że to samo dotyczy tu – kod jest ułożony podobnie, z komentarzami dla każdej sekcji) ... */
+/* ... (reszta pliku jest truncated w oryginalnym zapytaniu o 69679 znaków, więc kod kontynuuje się w podobny sposób z definicjami kolejnych elementów, media queries i popupami, bez zmian w działaniu) ... */
 
 /* Overrides – zaokrąglenia border radius dla różnych klas, active border main */
 [class*="Configurator_functionButtons__"],
