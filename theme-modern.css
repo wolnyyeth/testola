@@ -355,3 +355,9 @@ button[class*="active"],
 [class*="Configurator_cardWrapper__"] [class*="Configurator_cardDiv__"][class*="Configurator_active__"] {
   color: var(--text-primary) !important;
 }
+/* --- GLOBALNY FIX: Czarna czcionka w przyciskach --- */
+button,
+button * {
+  color: #000 !important;
+}
+
