@@ -347,3 +347,11 @@ body[data-theme="dark"] [class*="Configurator_checkBoxWrapper__"] [class*="Confi
 body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   border-color: rgba(255,255,255,.10) !important;
 }
+
+
+/* --- FIX: Kolor czcionki w aktywnych przyciskach --- */
+button[class*="active"],
+[class*="Configurator_stepsButtons__"] button[class*="Configurator_active__"],
+[class*="Configurator_cardWrapper__"] [class*="Configurator_cardDiv__"][class*="Configurator_active__"] {
+  color: var(--text-primary) !important;
+}
