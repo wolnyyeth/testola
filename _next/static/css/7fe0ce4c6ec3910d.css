@@ -19,8 +19,8 @@ body, html {
 
 /* Style dla body, button – ustawia kolor, tło, font, smoothing */
 body {
-  color: #00000;
-  background: #00000;
+  color: var(--foreground);
+  background: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -62,6 +62,7 @@ a {
   border-radius: 100px;
   border: 0 #000;
 }
+
 
 
 
