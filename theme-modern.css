@@ -354,3 +354,31 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
 [class*="Configurator_checkBoxDiv__"][class*="Configurator_active__"] * {
   color: #000 !important;
 }
+
+/* === Logo/nagłówek w navbarze – własny tekst i styl === */
+:root {
+  /* Zmień tu, na co chcesz (pamiętaj o cudzysłowach) */
+  --brandWord: "AEROLUX PREMIUM";
+}
+
+/* Ukryj oryginalny tekst i wstaw swój */
+[class*="Configurator_screenDiv__"] nav h3 {
+  position: relative !important;
+  color: transparent !important;      /* ukrywamy oryginał */
+  text-transform: none !important;     /* bez wymuszania UPPERCASE (my damy sami) */
+  letter-spacing: .08em !important;
+  font-weight: 900 !important;
+}
+[class*="Configurator_screenDiv__"] nav h3::after {
+  content: var(--brandWord);
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-transform: uppercase;
+  /* luksusowe złoto (możesz zostawić zwykły color: #d4af37) */
+  background: linear-gradient(180deg, #d4af37, #b78c2a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
