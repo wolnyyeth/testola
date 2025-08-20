@@ -23,7 +23,7 @@
     <script src="/_next/static/chunks/pages/index-9f3cdc76ddf7675d.js" defer></script>
     <script src="/_next/static/lTIj9DcOXlToepo1puhZJ/_buildManifest.js" defer></script>
     <script src="/_next/static/lTIj9DcOXlToepo1puhZJ/_ssgManifest.js" defer></script>
-
+    
     <!-- Extra CSS -->
     <link rel="stylesheet" href="/theme-modern.css?v=3" />
     <link rel="stylesheet" href="./theme-modern.css?v=4" />
@@ -82,5 +82,27 @@
     <next-route-announcer>
       <p aria-live="assertive" id="__next-route-announcer__" role="alert" style="border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;top:0;width:1px;white-space:nowrap;overflow-wrap:normal;"></p>
     </next-route-announcer>
+    <div id="__next"></div>
+
+  <!-- tu Next.js wrzuca swoje <script src="..."> -->
+
+  <script>
+    (function () {
+      const SEL = '[class*="Configurator_screenDiv__"] nav h3';
+      function killGhost() {
+        const h3 = document.querySelector(SEL);
+        if (!h3) return;
+        const span = h3.nextElementSibling;
+        if (span && span.tagName === 'SPAN') {
+          span.remove(); // usuwamy rozmyty napis
+        }
+      }
+      killGhost();
+      new MutationObserver(killGhost).observe(document.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    })();
+  </script>
   </body>
 </html>
