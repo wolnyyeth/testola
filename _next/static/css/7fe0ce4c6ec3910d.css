@@ -3,11 +3,11 @@
 
 /* Definicja zmiennych CSS w :root – kolory używane w całej aplikacji */
 :root {
-  --background: #fffff; /* Kolor tła aplikacji */
-  --foreground: #fffff; /* Kolor tekstu podstawowego */
-  --mainColor: #fffff; /* Główny kolor akcentu */
-  --mainColorTransparent: #fffff; /* Przezroczysta wersja głównego koloru */
-  --secondaryColor: #fffff; /* Kolor drugorzędny */
+  --background: #f9f9f7; /* Kolor tła aplikacji */
+  --foreground: #222; /* Kolor tekstu podstawowego */
+  --mainColor: #c9b89a; /* Główny kolor akcentu */
+  --mainColorTransparent: #c9b89a55; /* Przezroczysta wersja głównego koloru */
+  --secondaryColor: #999; /* Kolor drugorzędny */
 }
 
 /* Style dla body i html – ustawia maksymalną szerokość, ukrywa overflow-x, włącza box-sizing */
@@ -62,4 +62,5 @@ a {
   border-radius: 100px;
   border: 0 #000;
 }
+
 
