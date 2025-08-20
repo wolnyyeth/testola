@@ -382,3 +382,24 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   color: transparent;
   text-shadow: 0 2px 6px rgba(0,0,0,.18);
 }
+/* === Wyśrodkowanie złotego napisu + rozmytego cienia === */
+[class*="Configurator_screenDiv__"] nav h3 {
+  position: relative !important;
+  display: inline-block !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+/* Pseudo-element generujący rozmyty cień */
+[class*="Configurator_screenDiv__"] nav h3::before {
+  content: attr(data-text); /* pobiera ten sam tekst co nagłówek */
+  position: absolute;
+  top: 100%; /* ustawia poniżej głównego napisu */
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: inherit;
+  font-size: inherit;
+  color: rgba(0, 0, 0, 0.2);
+  filter: blur(6px);
+  white-space: nowrap;
+  pointer-events: none;
