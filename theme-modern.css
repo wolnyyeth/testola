@@ -418,3 +418,24 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
   position: relative !important;
   z-index: 10 !important; /* nad wszystkim */
 }
+/* Ukrywamy pseudo-elementy generujące rozmyty napis */
+[class*="Configurator_screenDiv__"] nav h3::before,
+[class*="Configurator_screenDiv__"] nav h3::after {
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Stylizacja samego nagłówka */
+[class*="Configurator_screenDiv__"] nav h3 {
+  position: relative !important;
+  color: #d4af37 !important; /* złoty kolor, zmień na własny jeśli chcesz */
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  text-shadow: none !important; /* zero rozmyć */
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10 !important;
+}
