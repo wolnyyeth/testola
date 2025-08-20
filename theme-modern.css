@@ -358,7 +358,7 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
 /* === Logo/nagłówek w navbarze – własny tekst i styl === */
 :root {
   /* Zmień tu, na co chcesz (pamiętaj o cudzysłowach) */
-  --brandWord: "OSZALEJE KURWA";
+  --brandWord: "PERGI";
 }
 
 /* Ukryj oryginalny tekst i wstaw swój */
