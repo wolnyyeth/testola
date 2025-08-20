@@ -86,23 +86,5 @@
 
   <!-- tu Next.js wrzuca swoje <script src="..."> -->
 
-  <script>
-    (function () {
-      const SEL = '[class*="Configurator_screenDiv__"] nav h3';
-      function killGhost() {
-        const h3 = document.querySelector(SEL);
-        if (!h3) return;
-        const span = h3.nextElementSibling;
-        if (span && span.tagName === 'SPAN') {
-          span.remove(); // usuwamy rozmyty napis
-        }
-      }
-      killGhost();
-      new MutationObserver(killGhost).observe(document.documentElement, {
-        childList: true,
-        subtree: true
-      });
-    })();
-  </script>
   </body>
 </html>
