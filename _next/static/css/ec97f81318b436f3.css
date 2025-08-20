@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 50px;
+  padding: 500px;
   gap: 60px;
 }
 
@@ -568,6 +568,7 @@
 .StartPanel_adnotation__PKKkE {
   background-color: var(--mainColor) !important;
 }
+
 
 
 
