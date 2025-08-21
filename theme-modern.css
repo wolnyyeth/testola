@@ -455,3 +455,36 @@ body[data-theme="dark"] [class*="Configurator_canvasDiv__"] {
 [class*="Configurator_screenDiv__"] nav { position: relative !important; }
 [class*="Configurator_screenDiv__"] nav h3 { position: relative !important; z-index: 11 !important; }
 
+/* Domyślnie: brak zaznaczania */
+html, body, body * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Wyjątki: pozwól zaznaczać w polach edycyjnych */
+input, textarea, [contenteditable="true"], [contenteditable=""], [contenteditable] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+<script>
+  // Blokada menu kontekstowego z wyjątkami
+  document.addEventListener('contextmenu', function (e) {
+    // Pozwól na prawy klik w polach edycyjnych i na elementach z klasą "allow-rightclick"
+    if (e.target.closest('input, textarea, [contenteditable], .allow-rightclick')) return;
+    e.preventDefault();
+  });
+
+  // Dodatkowo: blokada startu zaznaczania (na wypadek obejść)
+  document.addEventListener('selectstart', function (e) {
+    if (e.target.closest('input, textarea, [contenteditable], .allow-select')) return;
+    e.preventDefault();
+  });
+
+  // Opcjonalnie: wyłącz przeciąganie obrazków/tekstu
+  document.addEventListener('dragstart', function (e) { e.preventDefault(); });
+</script>
