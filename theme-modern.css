@@ -471,20 +471,3 @@ input, textarea, [contenteditable="true"], [contenteditable=""], [contenteditabl
   user-select: text !important;
 }
 
-<script>
-  // Blokada menu kontekstowego z wyjątkami
-  document.addEventListener('contextmenu', function (e) {
-    // Pozwól na prawy klik w polach edycyjnych i na elementach z klasą "allow-rightclick"
-    if (e.target.closest('input, textarea, [contenteditable], .allow-rightclick')) return;
-    e.preventDefault();
-  });
-
-  // Dodatkowo: blokada startu zaznaczania (na wypadek obejść)
-  document.addEventListener('selectstart', function (e) {
-    if (e.target.closest('input, textarea, [contenteditable], .allow-select')) return;
-    e.preventDefault();
-  });
-
-  // Opcjonalnie: wyłącz przeciąganie obrazków/tekstu
-  document.addEventListener('dragstart', function (e) { e.preventDefault(); });
-</script>
